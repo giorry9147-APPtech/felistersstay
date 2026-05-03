@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id              String    @id @default(cuid())
+  slug            String    @unique
+  name            String
+  type            String    // "villa" | "apartment"
+  shortDescription String
+  description     String
+  location        String
+  address         String
+  latitude        Float
+  longitude       Float
+  bedrooms        Int
+  bathrooms       Int
+  beds            Int
+  maxGuests       Int
+  sizeM2          Int?
+  basePriceKes    Int       // base price per night in KES
+  cleaningFeeKes  Int       @default(0)
+  rating          Float     @default(0)
+  reviewCount     Int       @default(0)
+  amenities       String    // JSON array of amenity keys
+  images          String    // JSON array of image URLs
+  highlights      String    // JSON array of {icon, title, text}
+  airbnbUrl       String?
+  bookingUrl      String?
+  icalAirbnb      String?
+  icalBooking     String?
+  active          Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  bookings        Booking[]
+  blockedDates    BlockedDate[]
+  reviews         Review[]
+}
+
+model Booking {
+  id              String    @id @default(cuid())
+  propertyId      String
+  property        Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  guestName       String
+  guestEmail      String
+  guestPhone      String
+  checkIn         DateTime
+  checkOut        DateTime
+  guests          Int
+  nights          Int
+  subtotalKes     Int
+  cleaningFeeKes  Int
+  totalKes        Int
+  currency        String    @default("KES")
+  paymentMethod   String    // "mpesa" | "card" | "manual"
+  paymentStatus   String    @default("pending") // pending | paid | failed | refunded
+  mpesaCheckoutId String?
+  mpesaReceipt    String?
+  notes           String?
+  source          String    @default("website") // website | airbnb | booking | manual
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([propertyId, checkIn, checkOut])
+}
+
+model BlockedDate {
+  id          String    @id @default(cuid())
+  propertyId  String
+  property    Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  startDate   DateTime
+  endDate     DateTime
+  source      String    // airbnb | booking | manual
+  externalId  String?   // UID from iCal source
+  summary     String?
+  createdAt   DateTime  @default(now())
+
+  @@unique([propertyId, source, externalId])
+  @@index([propertyId, startDate, endDate])
+}
+
+model Review {
+  id          String    @id @default(cuid())
+  propertyId  String
+  property    Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  authorName  String
+  authorCountry String?
+  rating      Int
+  title       String?
+  body        String
+  stayMonth   String?   // "October 2025"
+  source      String    @default("airbnb") // airbnb | booking | website
+  createdAt   DateTime  @default(now())
+}
+
+model Setting {
+  key   String  @id
+  value String
+}
