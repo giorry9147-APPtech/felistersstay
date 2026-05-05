@@ -22,12 +22,29 @@ export function AboutFelister() {
         >
           <div className="relative aspect-[4/5] rounded-[var(--radius-card)] overflow-hidden shadow-[var(--shadow-deep)]">
             <Image
-              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=85"
-              alt="Felister"
+              src="/family.jpeg"
+              alt="Felister with her family"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
+          {/* Small offset photo of the daughters as a polaroid accent */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, rotate: -6 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: -6 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="absolute -bottom-10 -left-6 hidden md:block w-44 aspect-[3/4] rounded-2xl overflow-hidden shadow-[var(--shadow-deep)] ring-4 ring-white"
+          >
+            <Image
+              src="/family2.jpeg"
+              alt="Felister's daughters"
+              fill
+              className="object-cover"
+              sizes="180px"
+            />
+          </motion.div>
           <div className="absolute -bottom-6 -right-6 hidden md:block">
             <div className="bg-[var(--color-coral-500)] text-white rounded-2xl p-5 shadow-[var(--shadow-warm)] max-w-[220px]">
               <Quote size={20} className="opacity-70" />

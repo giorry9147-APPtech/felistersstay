@@ -63,17 +63,9 @@ export const PROPERTIES: PropertySeed[] = [
       "patio", "terrace", "fireplace", "nonsmoking", "cleaning",
       "linen", "coffee",
     ],
-    images: [
-      "/properties/villa-by-the-beach/photo-01.jpg",
-      "/properties/villa-by-the-beach/photo-02.jpg",
-      "/properties/villa-by-the-beach/photo-03.jpg",
-      "/properties/villa-by-the-beach/photo-04.jpg",
-      "/properties/villa-by-the-beach/photo-05.jpg",
-      "/properties/villa-by-the-beach/photo-06.jpg",
-      "/properties/villa-by-the-beach/photo-07.jpg",
-      "/properties/villa-by-the-beach/photo-08.jpg",
-      "/properties/villa-by-the-beach/photo-09.jpg",
-    ],
+    images: Array.from({ length: 10 }, (_, i) =>
+      `/properties/villa-by-the-beach/photo-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
     highlights: [
       { icon: "leaf", title: "Patio + garden", text: "Outdoor dining area in own garden" },
       { icon: "flame", title: "Fireplace", text: "For cooler coastal evenings" },

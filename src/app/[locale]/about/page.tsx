@@ -15,7 +15,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <div className="grid gap-16 lg:grid-cols-12 items-center">
         <div className="lg:col-span-5 relative">
           <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[var(--shadow-deep)]">
-            <Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1400&q=85" alt="Felister" fill className="object-cover" />
+            <Image src="/family3.jpeg" alt="Felister with her family" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 40vw" />
           </div>
           <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-[var(--shadow-soft)] flex items-center gap-3">
             <Heart size={18} className="text-[var(--color-coral-500)] fill-current" />

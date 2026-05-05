@@ -91,10 +91,11 @@ function FloatingCards() {
           <div className="flex items-center gap-3">
             <div className="relative h-12 w-12 rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=160&q=85"
+                src="/family3.jpeg"
                 alt="Felister"
                 fill
                 className="object-cover"
+                style={{ objectPosition: "30% 25%" }}
                 sizes="48px"
               />
             </div>
