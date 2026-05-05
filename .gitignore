@@ -16,3 +16,5 @@ tmp-scrape/
 # Claude Code lokale settings (user-specific)
 .claude/
 *.local.json
+
+.vercel

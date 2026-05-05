@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { db } from "@/lib/db";
 import { BookingForm } from "@/components/booking/booking-form";
+import { MANUAL_PAYBILL, stkPushEnabled } from "@/lib/payment-config";
 
 export default async function BookPage({
   params,
@@ -25,6 +26,8 @@ export default async function BookPage({
         checkOut: sp.checkOut ?? "",
         guests: Number(sp.guests ?? 2),
       }}
+      paybill={MANUAL_PAYBILL}
+      stkEnabled={stkPushEnabled()}
     />
   );
 }
