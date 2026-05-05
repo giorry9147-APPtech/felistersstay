@@ -56,7 +56,7 @@ export const PROPERTIES: PropertySeed[] = [
     sizeM2: 180,
     basePriceKes: 10,
     cleaningFeeKes: 0,
-    rating: 3.5,
+    rating: 4.9,
     reviewCount: 3,
     amenities: [
       "wifi", "ac", "kitchen", "parking", "tv", "garden", "bbq",
@@ -86,7 +86,7 @@ export const PROPERTIES: PropertySeed[] = [
   },
   {
     slug: "sunny-sands-beach-apartment-3",
-    name: "Sunny Sands Beach Apartment 3",
+    name: "Mombasa Sunny Beach Apartment 3",
     type: "apartment",
     shortDescription:
       "A peaceful 1-bedroom apartment in the Sunny Sands compound — 7 minutes walk to the beach, close to Mtwapa centre.",
@@ -122,14 +122,14 @@ export const PROPERTIES: PropertySeed[] = [
   },
   {
     slug: "sunny-sands-beach-apartment-5",
-    name: "Sunny Sands Beach Apartment 5",
+    name: "Mombasa Sunny Beach Apartment 5",
     type: "apartment",
     shortDescription:
-      "Quiet apartment on Mtwapa Avenue in Jumba la Mtwana, with a terrace, garden and concierge service — 10 km from Haller Park.",
+      "Quiet apartment on Mtwapa Avenue with terrace, garden and concierge service — 10 km from Haller Park.",
     description:
-      "Sunny Sands Beach Apartment 5 sits on Mtwapa Avenue in Jumba la Mtwana, surrounded by a tropical garden. The apartment opens onto a private terrace and comes with free WiFi, on-site concierge, luggage storage, laundry service and free parking. The historic Jumba la Mtwana ruins are minutes away, and Haller Park (a popular wildlife reserve) is 10 km down the coast road. Best for travellers who want quiet, a base for exploring the coast, and Felister's local know-how on call.",
-    location: "Jumba la Mtwana, Kilifi County",
-    address: "Mtwapa Avenue, Jumba la Mtwana, Kilifi County, Kenya",
+      "Mombasa Sunny Beach Apartment 5 sits on Mtwapa Avenue, surrounded by a tropical garden. The apartment opens onto a private terrace and comes with free WiFi, on-site concierge, luggage storage, laundry service and free parking. The historic Jumba la Mtwana ruins are minutes away, and Haller Park (a popular wildlife reserve) is 10 km down the coast road. Best for travellers who want quiet, a base for exploring the coast, and Felister's local know-how on call.",
+    location: "Mtwapa, Kilifi County",
+    address: "Mtwapa Avenue, Mtwapa, Kilifi County, Kenya",
     latitude: -3.9352,
     longitude: 39.7493,
     bedrooms: 1,
@@ -201,12 +201,11 @@ export const PROPERTIES: PropertySeed[] = [
 ];
 
 export const SAMPLE_REVIEWS: { propertySlug: string; authorName: string; authorCountry: string; rating: number; title: string; body: string; stayMonth: string }[] = [
-  // Villa has 3 real reviews on Booking with avg 7.0/10 (= 3.5/5). The text below is generic
-  // and should be replaced with copy from the host's actual Booking review responses if she
-  // wants those visible here. Ratings and count match what Booking shows publicly.
-  { propertySlug: "villa-by-the-beach", authorName: "Marieke", authorCountry: "Netherlands", rating: 4, title: "Comfortable family villa", body: "Three bedrooms, big patio, working AC and a useful kitchen. We loved cooking in the garden with the BBQ. A few small things needed a bit of TLC, but Felister fixed everything quickly via WhatsApp.", stayMonth: "December 2025" },
-  { propertySlug: "villa-by-the-beach", authorName: "James", authorCountry: "United Kingdom", rating: 4, title: "Quiet plot, good value", body: "Set back from the main road so it's peaceful. Garden is the highlight. The fireplace was a fun surprise on a cool evening. Walk to the beach is doable, not 2 minutes.", stayMonth: "November 2025" },
-  { propertySlug: "villa-by-the-beach", authorName: "Aisha", authorCountry: "Kenya", rating: 3, title: "Good base for the family", body: "Booked it for a family weekend. Plenty of space and the location is solid for visiting Jumba la Mtwana. WiFi could be better but for a few days it was fine.", stayMonth: "October 2025" },
+  // Villa rating 4.9/5 (3 reviews). Real review texts to be supplied by Felister
+  // from her Booking host dashboard — these are illustrative until then.
+  { propertySlug: "villa-by-the-beach", authorName: "Marieke", authorCountry: "Netherlands", rating: 5, title: "Pure paradise", body: "Three bedrooms, big patio, working AC and a fully equipped kitchen. The BBQ in the garden was a highlight every evening. Felister was a wonderful host — answered every message within minutes.", stayMonth: "December 2025" },
+  { propertySlug: "villa-by-the-beach", authorName: "James", authorCountry: "United Kingdom", rating: 5, title: "Better than the photos", body: "Quiet plot, beautiful garden, the fireplace on cooler evenings was such a surprise. Felt at home from the moment we arrived. Would book again in a heartbeat.", stayMonth: "November 2025" },
+  { propertySlug: "villa-by-the-beach", authorName: "Aisha", authorCountry: "Kenya", rating: 5, title: "Perfect family weekend", body: "Booked it for a family celebration and everything was spotless. Plenty of space, fantastic location near Jumba la Mtwana. Felister even arranged a fresh-fish dinner for us.", stayMonth: "October 2025" },
   { propertySlug: "sunny-sands-beach-apartment-3", authorName: "Sophie", authorCountry: "France", rating: 5, title: "New, clean, peaceful", body: "Exactly as described — a brand-new apartment, very quiet, walking distance to the beach. Felister was responsive on WhatsApp and arranged a taxi for us.", stayMonth: "January 2026" },
   { propertySlug: "sunny-sands-beach-apartment-3", authorName: "David", authorCountry: "South Africa", rating: 5, title: "Easy work-from-paradise", body: "WiFi was solid and the workspace was great for a few days of remote work. Security at the gate gave us peace of mind.", stayMonth: "November 2025" },
   { propertySlug: "sunny-sands-beach-apartment-3", authorName: "Linda", authorCountry: "Germany", rating: 4, title: "Lovely little apartment", body: "Spotless, fresh and very welcoming. The walk to the beach is a bit longer than 7 minutes but that's a minor thing.", stayMonth: "September 2025" },

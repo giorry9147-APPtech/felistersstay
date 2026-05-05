@@ -17,11 +17,13 @@ export function FeaturedProperties({ properties }: { properties: Property[] }) {
     <section className="container-x pt-24 pb-12">
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
         <div className="max-w-2xl">
-          <Badge tone="coral" className="mb-4">Our stays</Badge>
-          <h2 className="font-display text-3xl md:text-5xl text-[var(--color-deep-900)] leading-[1.1]">
-            {t("title")}
+          <Badge tone="coral" className="mb-4">More stays</Badge>
+          <h2 className="font-display text-3xl md:text-5xl text-[var(--color-deep-900)] leading-[1.05]">
+            Apartments &amp; retreats
           </h2>
-          <p className="mt-4 text-[var(--color-deep-700)] text-lg leading-relaxed">{t("subtitle")}</p>
+          <p className="mt-4 text-[var(--color-deep-700)] text-lg leading-relaxed">
+            Smaller stays in Felister's collection — perfect for couples, solo travellers and quieter getaways.
+          </p>
         </div>
         <div className="flex gap-2">
           <Button asChild variant="outline">

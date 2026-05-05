@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/home/hero";
+import { FeaturedVilla } from "@/components/home/featured-villa";
 import { FeaturedProperties } from "@/components/home/featured-properties";
 import { ExperienceStrip } from "@/components/home/experience-strip";
 import { AboutFelister } from "@/components/home/about-felister";
@@ -18,10 +19,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     include: { property: { select: { name: true, slug: true, images: true } } },
   });
 
+  // Villa is the flagship — features prominently above the rest.
+  const villa = properties.find((p) => p.type === "villa");
+  const others = properties.filter((p) => p.type !== "villa");
+
   return (
     <>
       <Hero />
-      <FeaturedProperties properties={properties} />
+      {villa && <FeaturedVilla villa={villa} />}
+      <FeaturedProperties properties={others} />
       <ExperienceStrip />
       <WhyDirect />
       <AboutFelister />
