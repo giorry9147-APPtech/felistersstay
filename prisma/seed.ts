@@ -34,7 +34,7 @@ async function main() {
     await db.property.upsert({
       where: { slug: p.slug },
       update: data,
-      create: { slug: p.slug, ...data },
+      create: data,
     });
   }
   for (const r of SAMPLE_REVIEWS) {
