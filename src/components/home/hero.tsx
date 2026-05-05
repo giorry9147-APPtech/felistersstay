@@ -11,7 +11,9 @@ export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative overflow-hidden">
+    // -mt-20 pulls hero up under the (transparent) sticky navbar so the
+    // photo fills the area behind it.
+    <section className="relative overflow-hidden -mt-20 pt-20">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/properties/villa-by-the-beach/photo-01.jpg"

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
@@ -11,7 +11,16 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Transparent over hero, soft glass once you scroll past it
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = [
     { href: "/", label: t("home") },
@@ -20,9 +29,20 @@ export function Header() {
     { href: "/contact", label: t("contact") },
   ];
 
+  // Pages other than the homepage don't have a dark hero behind the navbar,
+  // so we always need the glass background there.
+  const overHero = pathname === "/" && !scrolled && !open;
+
   return (
     <header className="sticky top-0 z-50 w-full">
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-xl border-b border-white/40" />
+      <div
+        className={cn(
+          "absolute inset-0 transition-all duration-300",
+          overHero
+            ? "bg-transparent border-b border-transparent"
+            : "bg-white/75 backdrop-blur-xl border-b border-white/40"
+        )}
+      />
       <div className="container-x relative flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group" aria-label="Felisters Stay">
           <Image
@@ -34,7 +54,16 @@ export function Header() {
             className="h-12 md:h-16 w-auto"
             sizes="(max-width: 768px) 100px, 140px"
           />
-          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-[var(--color-ocean-700)] border-l border-[var(--color-sand-200)] pl-3">Mombasa Beach · Kenya</span>
+          <span
+            className={cn(
+              "hidden sm:inline text-[10px] uppercase tracking-[0.2em] border-l pl-3 transition-colors",
+              overHero
+                ? "text-white/85 border-white/30"
+                : "text-[var(--color-ocean-700)] border-[var(--color-sand-200)]"
+            )}
+          >
+            Mombasa Beach · Kenya
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
@@ -47,8 +76,12 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 rounded-full text-sm font-medium transition-colors",
                   active
-                    ? "bg-[var(--color-deep-900)] text-white"
-                    : "text-[var(--color-deep-900)] hover:bg-[var(--color-sand-100)]"
+                    ? overHero
+                      ? "bg-white text-[var(--color-deep-900)]"
+                      : "bg-[var(--color-deep-900)] text-white"
+                    : overHero
+                      ? "text-white hover:bg-white/15"
+                      : "text-[var(--color-deep-900)] hover:bg-[var(--color-sand-100)]"
                 )}
               >
                 {l.label}
