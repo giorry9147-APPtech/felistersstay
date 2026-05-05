@@ -31,8 +31,8 @@ export function Header() {
             width={1408}
             height={768}
             priority
-            className="h-12 w-auto"
-            sizes="180px"
+            className="h-12 md:h-16 w-auto"
+            sizes="(max-width: 768px) 100px, 140px"
           />
           <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-[var(--color-ocean-700)] border-l border-[var(--color-sand-200)] pl-3">Mtwapa · Kenya</span>
         </Link>
