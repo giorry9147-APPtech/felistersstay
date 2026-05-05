@@ -162,6 +162,42 @@ export const PROPERTIES: PropertySeed[] = [
     bookingUrl:
       "https://www.booking.com/hotel/ke/sunny-sands-beach-apartment-5.en-gb.html",
   },
+  {
+    slug: "tiny-house-on-a-farm",
+    name: "Tiny House on a Farm",
+    type: "apartment",
+    shortDescription:
+      "An off-grid stone tiny-house on a working farm — surrounded by nature, 25 minutes from the sea.",
+    description:
+      "An oasis of silence where you can really unplug. A mini-house surrounded by nature where you can hear the chirping of birds and where you can spend time with farmyard animals. Just 25 minutes from the sea and 45 minutes from the mountains, close to places of historical and natural interest and a starting point for hiking trails.\n\nOne bright bedroom, a private patio with garden views, a fully equipped kitchen and a rooftop terrace for sunsets. Sleeps up to 4.",
+    location: "Abruzzo, Italy",
+    address: "Rural farm property, Abruzzo, Italy",
+    latitude: 42.0693,
+    longitude: 14.419,
+    bedrooms: 1,
+    bathrooms: 1,
+    beds: 2,
+    maxGuests: 4,
+    sizeM2: 35,
+    basePriceKes: 10,
+    cleaningFeeKes: 0,
+    rating: 5.0,
+    reviewCount: 65,
+    amenities: [
+      "wifi", "kitchen", "parking", "tv", "washer", "garden", "bbq",
+      "patio", "terrace", "nonsmoking", "linen", "safe", "coffee",
+    ],
+    images: Array.from({ length: 26 }, (_, i) =>
+      `/properties/tiny-house-on-a-farm/photo-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
+    highlights: [
+      { icon: "leaf", title: "Off-grid retreat", text: "Surrounded by farmland & nature" },
+      { icon: "waves", title: "25 min to the sea", text: "Adriatic coast within easy reach" },
+      { icon: "compass", title: "Hiking trails", text: "Trailheads at the doorstep" },
+      { icon: "users", title: "Sleeps 4", text: "1 bedroom + sofa bed" },
+    ],
+    airbnbUrl: "https://www.airbnb.co.uk/rooms/639599869026350715",
+  },
 ];
 
 export const SAMPLE_REVIEWS: { propertySlug: string; authorName: string; authorCountry: string; rating: number; title: string; body: string; stayMonth: string }[] = [
