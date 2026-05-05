@@ -10,6 +10,13 @@ export function Footer() {
   const tNav = useTranslations("nav");
   const year = new Date().getFullYear();
 
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "31633085773";
+  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "bookings@felisterstays.com";
+  // Pretty-format the phone number for display: 31633085773 → +31 633 085 773
+  const whatsappDisplay = whatsapp.startsWith("31") && whatsapp.length === 11
+    ? `+31 ${whatsapp.slice(2, 5)} ${whatsapp.slice(5, 8)} ${whatsapp.slice(8)}`
+    : `+${whatsapp}`;
+
   return (
     <footer className="relative mt-32 bg-[var(--color-deep-900)] text-sand-50 overflow-hidden grain">
       <div className="absolute inset-x-0 -top-px h-24 bg-gradient-to-b from-[var(--color-sand-50)] to-transparent" style={{ background: "linear-gradient(to bottom, var(--color-sand-50), transparent)" }} />
@@ -42,8 +49,9 @@ export function Footer() {
             <h4 className="font-display text-white text-lg mb-4">{t("stays")}</h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li><Link href="/stays/villa-by-the-beach" className="hover:text-white">Villa by the Beach</Link></li>
-              <li><Link href="/stays/sunny-sands-beach-apartment-3" className="hover:text-white">Sunny Sands #3</Link></li>
-              <li><Link href="/stays/sunny-sands-beach-apartment-5" className="hover:text-white">Sunny Sands #5</Link></li>
+              <li><Link href="/stays/sunny-sands-beach-apartment-3" className="hover:text-white">Apartment 3</Link></li>
+              <li><Link href="/stays/sunny-sands-beach-apartment-5" className="hover:text-white">Apartment 5</Link></li>
+              <li><Link href="/stays/tiny-house-on-a-farm" className="hover:text-white">Tiny House on a Farm</Link></li>
             </ul>
           </div>
           <div className="md:col-span-2">
@@ -56,9 +64,31 @@ export function Footer() {
           <div className="md:col-span-3">
             <h4 className="font-display text-white text-lg mb-4">{tNav("contact")}</h4>
             <ul className="space-y-3 text-sm text-white/70">
-              <li className="flex items-center gap-2"><Mail size={16} /> bookings@felisterstays.com</li>
-              <li className="flex items-center gap-2"><MessageCircle size={16} /> WhatsApp +254 700 000 000</li>
-              <li className="flex items-center gap-2"><Instagram size={16} /> @felisterstays</li>
+              <li>
+                <a href={`mailto:${email}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Mail size={16} /> {email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <MessageCircle size={16} /> WhatsApp {whatsappDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/felisterstays"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <Instagram size={16} /> @felisterstays
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -5,7 +5,8 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, ArrowRight, MapPin, Play } from "lucide-react";
+import { VideoTourButton } from "@/components/home/video-tour-button";
+import { Star, ArrowRight, MapPin } from "lucide-react";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -46,11 +47,7 @@ export function Hero() {
                 {t("cta")} <ArrowRight size={18} />
               </Link>
             </Button>
-            <Button asChild variant="glass" size="lg">
-              <Link href="/about">
-                <Play size={16} /> {t("secondary")}
-              </Link>
-            </Button>
+            <VideoTourButton label={t("secondary")} />
           </div>
 
           <div className="mt-16 grid grid-cols-3 gap-4 max-w-xl">

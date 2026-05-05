@@ -64,7 +64,7 @@ export function AboutFelister() {
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-ocean-700)] font-semibold mb-4">Your host</p>
           <h2 className="font-display text-4xl md:text-5xl text-[var(--color-deep-900)] leading-[1.05]">{t("title")}</h2>
           <p className="font-display italic text-2xl md:text-3xl text-[var(--color-coral-600)] mt-3 tracking-tight">{t("subtitle")}</p>
-          <p className="mt-6 text-lg text-[var(--color-deep-700)] leading-relaxed max-w-xl">{t("body")}</p>
+          <p className="mt-6 text-lg text-[var(--color-deep-700)] leading-relaxed max-w-xl whitespace-pre-line">{t("body")}</p>
           <div className="mt-8">
             <Button asChild variant="primary">
               <Link href="/about">More about Felister</Link>

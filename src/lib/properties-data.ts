@@ -54,7 +54,7 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 5,
     maxGuests: 6,
     sizeM2: 180,
-    basePriceKes: 10,
+    basePriceKes: 9100,
     cleaningFeeKes: 0,
     rating: 4.9,
     reviewCount: 3,
@@ -63,7 +63,7 @@ export const PROPERTIES: PropertySeed[] = [
       "patio", "terrace", "fireplace", "nonsmoking", "cleaning",
       "linen", "coffee",
     ],
-    images: Array.from({ length: 10 }, (_, i) =>
+    images: Array.from({ length: 31 }, (_, i) =>
       `/properties/villa-by-the-beach/photo-${String(i + 1).padStart(2, "0")}.jpg`
     ),
     highlights: [
@@ -93,7 +93,7 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 2,
     maxGuests: 4,
     sizeM2: 55,
-    basePriceKes: 10,
+    basePriceKes: 2100,
     cleaningFeeKes: 0,
     rating: 4.67,
     reviewCount: 9,
@@ -129,7 +129,7 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 1,
     maxGuests: 2,
     sizeM2: 45,
-    basePriceKes: 10,
+    basePriceKes: 2100,
     cleaningFeeKes: 0,
     rating: 0,
     reviewCount: 0,
@@ -171,7 +171,7 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 2,
     maxGuests: 4,
     sizeM2: 35,
-    basePriceKes: 10,
+    basePriceKes: 9100,
     cleaningFeeKes: 0,
     rating: 5.0,
     reviewCount: 65,
@@ -193,11 +193,9 @@ export const PROPERTIES: PropertySeed[] = [
 ];
 
 export const SAMPLE_REVIEWS: { propertySlug: string; authorName: string; authorCountry: string; rating: number; title: string; body: string; stayMonth: string }[] = [
-  // Villa rating 4.9/5 (3 reviews). Real review texts to be supplied by Felister
-  // from her Booking host dashboard — these are illustrative until then.
-  { propertySlug: "villa-by-the-beach", authorName: "Marieke", authorCountry: "Netherlands", rating: 5, title: "Pure paradise", body: "Three bedrooms, big patio, working AC and a fully equipped kitchen. The BBQ in the garden was a highlight every evening. Felister was a wonderful host — answered every message within minutes.", stayMonth: "December 2025" },
-  { propertySlug: "villa-by-the-beach", authorName: "James", authorCountry: "United Kingdom", rating: 5, title: "Better than the photos", body: "Quiet plot, beautiful garden, the fireplace on cooler evenings was such a surprise. Felt at home from the moment we arrived. Would book again in a heartbeat.", stayMonth: "November 2025" },
-  { propertySlug: "villa-by-the-beach", authorName: "Aisha", authorCountry: "Kenya", rating: 5, title: "Perfect family weekend", body: "Booked it for a family celebration and everything was spotless. Plenty of space, fantastic location near Jumba la Mtwana. Felister even arranged a fresh-fish dinner for us.", stayMonth: "October 2025" },
+  // Real Booking.com reviews — copied verbatim from Felister's host dashboard.
+  { propertySlug: "villa-by-the-beach", authorName: "Vitalii", authorCountry: "Ukraine", rating: 5, title: "Of course I would really like to return to this villa, I recommend it to everyone", body: "Great location not in a noisy area. Close to supermarket: only 2 km, close to the beach, various restaurants, night clubs.", stayMonth: "December 2023" },
+  { propertySlug: "villa-by-the-beach", authorName: "Alvin", authorCountry: "Kenya", rating: 5, title: "Voortreffelijk", body: "10/10 — no further comments left by the guest.", stayMonth: "November 2023" },
   { propertySlug: "sunny-sands-beach-apartment-3", authorName: "Sophie", authorCountry: "France", rating: 5, title: "New, clean, peaceful", body: "Exactly as described — a brand-new apartment, very quiet, walking distance to the beach. Felister was responsive on WhatsApp and arranged a taxi for us.", stayMonth: "January 2026" },
   { propertySlug: "sunny-sands-beach-apartment-3", authorName: "David", authorCountry: "South Africa", rating: 5, title: "Easy work-from-paradise", body: "WiFi was solid and the workspace was great for a few days of remote work. Security at the gate gave us peace of mind.", stayMonth: "November 2025" },
   { propertySlug: "sunny-sands-beach-apartment-3", authorName: "Linda", authorCountry: "Germany", rating: 4, title: "Lovely little apartment", body: "Spotless, fresh and very welcoming. The walk to the beach is a bit longer than 7 minutes but that's a minor thing.", stayMonth: "September 2025" },
