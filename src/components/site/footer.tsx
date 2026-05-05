@@ -27,7 +27,7 @@ export function Footer() {
                   sizes="160px"
                 />
               </div>
-              <div className="text-xs uppercase tracking-[0.25em] text-[var(--color-ocean-300)]">Mtwapa · Kenya</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-[var(--color-ocean-300)]">Mombasa Beach · Kenya</div>
             </div>
             <p className="mt-6 text-white/70 max-w-md leading-relaxed">{t("tagline")}.</p>
             <div className="mt-8">

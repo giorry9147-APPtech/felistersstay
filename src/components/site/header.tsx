@@ -34,7 +34,7 @@ export function Header() {
             className="h-12 md:h-16 w-auto"
             sizes="(max-width: 768px) 100px, 140px"
           />
-          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-[var(--color-ocean-700)] border-l border-[var(--color-sand-200)] pl-3">Mtwapa · Kenya</span>
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-[var(--color-ocean-700)] border-l border-[var(--color-sand-200)] pl-3">Mombasa Beach · Kenya</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
@@ -57,20 +57,21 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        {/* Right cluster — language switcher always visible (also on mobile),
+            book-now button only on desktop, hamburger only on mobile */}
+        <div className="flex items-center gap-2 md:gap-3">
           <LangSwitcher />
-          <Button asChild variant="coral" size="md">
+          <Button asChild variant="coral" size="md" className="hidden md:inline-flex">
             <Link href="/stays">{t("bookNow")}</Link>
           </Button>
+          <button
+            className="md:hidden h-11 w-11 grid place-items-center rounded-full bg-white/80"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-
-        <button
-          className="md:hidden h-11 w-11 grid place-items-center rounded-full bg-white/80"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
       </div>
 
       {open && (
@@ -86,12 +87,9 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <div className="mt-4 flex items-center justify-between">
-              <LangSwitcher />
-              <Button asChild variant="coral">
-                <Link href="/stays" onClick={() => setOpen(false)}>{t("bookNow")}</Link>
-              </Button>
-            </div>
+            <Button asChild variant="coral" className="mt-4 w-full">
+              <Link href="/stays" onClick={() => setOpen(false)}>{t("bookNow")}</Link>
+            </Button>
           </div>
         </div>
       )}
