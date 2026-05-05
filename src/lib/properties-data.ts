@@ -54,8 +54,8 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 5,
     maxGuests: 6,
     sizeM2: 180,
-    basePriceKes: 14500,
-    cleaningFeeKes: 2500,
+    basePriceKes: 10,
+    cleaningFeeKes: 0,
     rating: 3.5,
     reviewCount: 3,
     amenities: [
@@ -101,8 +101,8 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 2,
     maxGuests: 4,
     sizeM2: 55,
-    basePriceKes: 4500,
-    cleaningFeeKes: 1000,
+    basePriceKes: 10,
+    cleaningFeeKes: 0,
     rating: 4.67,
     reviewCount: 9,
     amenities: [
@@ -137,8 +137,8 @@ export const PROPERTIES: PropertySeed[] = [
     beds: 1,
     maxGuests: 2,
     sizeM2: 45,
-    basePriceKes: 4200,
-    cleaningFeeKes: 1000,
+    basePriceKes: 10,
+    cleaningFeeKes: 0,
     rating: 0,
     reviewCount: 0,
     amenities: [

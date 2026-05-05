@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X, Globe } from "lucide-react";
@@ -23,15 +24,17 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
       <div className="absolute inset-0 bg-white/70 backdrop-blur-xl border-b border-white/40" />
       <div className="container-x relative flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative h-10 w-10 rounded-2xl bg-[var(--color-ocean-600)] grid place-items-center shadow-[var(--shadow-soft)]">
-            <span className="font-display text-white text-xl">F</span>
-            <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-[var(--color-coral-400)]" />
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-display text-lg text-[var(--color-deep-900)]">Felister Stays</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-ocean-700)]">Mtwapa · Kenya</span>
-          </div>
+        <Link href="/" className="flex items-center gap-3 group" aria-label="Felisters Stay">
+          <Image
+            src="/logo.png"
+            alt="Felisters Stay"
+            width={1408}
+            height={768}
+            priority
+            className="h-12 w-auto"
+            sizes="180px"
+          />
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-[var(--color-ocean-700)] border-l border-[var(--color-sand-200)] pl-3">Mtwapa · Kenya</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">

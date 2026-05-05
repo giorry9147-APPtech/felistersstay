@@ -34,10 +34,9 @@ export function Hero() {
           <Badge tone="white" className="mb-6">
             <MapPin size={12} /> {t("eyebrow")}
           </Badge>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.02]">
-            {t("title")}
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">{t("subtitle")}</p>
+          <p className="mt-2 text-2xl md:text-3xl lg:text-4xl text-white leading-[1.2] font-display max-w-3xl">
+            {t("subtitle")}
+          </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild variant="coral" size="lg">
@@ -90,10 +89,11 @@ function FloatingCards() {
           <div className="flex items-center gap-3">
             <div className="relative h-12 w-12 rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=160&q=85"
                 alt="Felister"
                 fill
                 className="object-cover"
+                sizes="48px"
               />
             </div>
             <div>

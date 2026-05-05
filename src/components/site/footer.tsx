@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Mail, Instagram, MessageCircle } from "lucide-react";
@@ -15,14 +16,18 @@ export function Footer() {
       <div className="container-x relative pt-24 pb-12">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-2xl bg-[var(--color-ocean-500)] grid place-items-center">
-                <span className="font-display text-white text-2xl">F</span>
+            <div className="flex items-center gap-4">
+              <div className="rounded-2xl bg-white p-2">
+                <Image
+                  src="/logo.png"
+                  alt="Felisters Stay"
+                  width={1408}
+                  height={768}
+                  className="h-10 w-auto"
+                  sizes="160px"
+                />
               </div>
-              <div>
-                <div className="font-display text-2xl text-white">Felister Stays</div>
-                <div className="text-xs uppercase tracking-[0.25em] text-[var(--color-ocean-300)]">Mtwapa · Kenya</div>
-              </div>
+              <div className="text-xs uppercase tracking-[0.25em] text-[var(--color-ocean-300)]">Mtwapa · Kenya</div>
             </div>
             <p className="mt-6 text-white/70 max-w-md leading-relaxed">{t("tagline")}.</p>
             <div className="mt-8">
